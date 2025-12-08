@@ -7,13 +7,12 @@ export class BudgetService {
   budgets = signal<Budget[]>(this.loadFromLocalStorage());
 
   constructor() {
-    // Auto-save wanneer budgets verandert
+
     effect(() => {
       const value = this.budgets();
       localStorage.setItem('budgets', JSON.stringify(value));
     });
 
-    // 👇 RXJS fromEvent werkt hier
     fromEvent(document, 'click').subscribe(() => {
       console.log('Clicked!');
     });

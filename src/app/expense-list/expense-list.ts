@@ -32,7 +32,6 @@ export class ExpenseListComponent {
 
     this.budgetService.addExpense(this.budgetId, this.newAmount, this.newDescription);
 
-    // reset form
     this.newDescription = '';
     this.newAmount = null;
   }
@@ -43,7 +42,7 @@ export class ExpenseListComponent {
 
     deleteBudget(budgetId: number) {
       this.budgetService.deleteBudget(budgetId);
-      // Optional: also remove from showExpensesMap to clean up
+
       this.showExpensesMap.update((map) => {
         const newMap = { ...map };
         delete newMap[budgetId];

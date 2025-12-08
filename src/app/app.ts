@@ -7,12 +7,12 @@ import { BudgetListComponent } from './budget-list/budget-list';
   standalone: true,
   imports: [AddBudgetFormComponent, BudgetListComponent],
   templateUrl: './app.html',
-  styleUrls: ['./app.css'], // corrected
+  styleUrls: ['./app.css'],
 })
 export class App {
   addBudget = false;
 
   setAddBudget() {
-    this.addBudget = !this.addBudget; // corrected toggle
+    this.addBudget = !this.addBudget; 
   }
 }

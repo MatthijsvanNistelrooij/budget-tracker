@@ -24,7 +24,6 @@ export class AddExpenseForm {
 
     this.budgetService.addExpense(this.budgetId, this.amount, this.description);
 
-    // reset form
     this.description = '';
     this.amount = null;
   }

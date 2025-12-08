@@ -17,7 +17,6 @@ export class BudgetListComponent {
 
   constructor(private budgetService: BudgetService) {}
 
-  // unwrap the signal into a plain array for the template
   get budgetsArray(): Budget[] {
     return this.budgetService.budgets();
   }
