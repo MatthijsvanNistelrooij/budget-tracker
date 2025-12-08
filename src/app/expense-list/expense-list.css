@@ -1,0 +1,46 @@
+.no-expenses {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.expenses {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #4f4f4f;
+  border: 1px solid rgb(72, 72, 72);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.total-expenses {
+  margin-top: 8px;
+  font-weight: bold;
+  border: 1px solid rgb(72, 72, 72);
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  color: #959595;
+}
+
+.description-item {
+  margin-left: 2px;
+  display: flex;
+  gap: 10px;
+  border: 1px solid rgb(72, 72, 72);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.delete-button {
+  justify-content: end;
+  display: flex;
+  margin-top: 10px;
+}
+

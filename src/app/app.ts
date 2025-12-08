@@ -1,12 +1,18 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { AddBudgetFormComponent } from './add-budget-form/add-budget-form';
+import { BudgetListComponent } from './budget-list/budget-list';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [AddBudgetFormComponent, BudgetListComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css'], // corrected
 })
 export class App {
-  protected readonly title = signal('angular-budget-tracker');
+  addBudget = false;
+
+  setAddBudget() {
+    this.addBudget = !this.addBudget; // corrected toggle
+  }
 }

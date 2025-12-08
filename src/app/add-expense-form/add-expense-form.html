@@ -1,0 +1,26 @@
+<div class="card">
+  <h3>Add Expense</h3>
+
+  <form (submit)="submitExpense($event)">
+    <div class="input-card">
+      <input
+        type="text"
+        placeholder="Description"
+        [(ngModel)]="description"
+        name="description"
+        required
+      />
+      <input
+        type="number"
+        placeholder="Amount"
+        [(ngModel)]="amount"
+        name="amount"
+        required
+        min="0.01"
+        step="0.01"
+      />
+
+      <button type="submit">Add Expense</button>
+    </div>
+  </form>
+</div>

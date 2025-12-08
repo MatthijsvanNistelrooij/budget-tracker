@@ -1,0 +1,86 @@
+.budget-card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column; /* card expand vertically */
+  transition: all 0.3s ease;
+}
+
+.budget-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expenses {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+
+.expenses h4 {
+  margin-bottom: 8px;
+}
+
+.expenses button {
+  margin-bottom: 8px;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.no-expenses {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.button-card {
+  display: flex;
+  gap: 15px;
+}
+
+.budget-progress {
+  width: 180px;
+  height: 20px;
+  background: #313131;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.budget-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #fbfff4, #16ff22);
+  text-align: center;
+  color: #4b4b4b;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  transition: width 0.3s ease;
+}
+
+.budget-goal {
+  font-size: 10px;
+  color: #737373;
+}
+
+.total-expenses {
+  margin-left: 2px;
+  font-size: 12px;
+  color: #66a469;
+}
+
+.total-savings {
+  font-weight: bold;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  color: #555555;
+  display: flex;
+  justify-content: flex-end;
+}

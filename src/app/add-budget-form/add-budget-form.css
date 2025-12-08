@@ -1,0 +1,19 @@
+.card {
+  background: var(--card);
+  padding: 30px 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
+.input-card {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+}
+
+input {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+}

@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --c1: #1976d2; 
+  --c2: #7e57c2; 
+  --c3: #ec407a; 
+  --bg: #0f0f12;
+  --card: #1d1d22;
+  --text: #e8e8e8;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, sans-serif;
+}
+
+button {
+  background: linear-gradient(135deg, var(--c1), var(--c2), var(--c3));
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}

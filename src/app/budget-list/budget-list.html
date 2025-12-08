@@ -1,0 +1,34 @@
+<div class="total-savings">
+  <strong
+    >Total savings:
+    {{ totalSavings() | currency : "EUR" : "symbol" : "1.2-2" }}
+  </strong>
+</div>
+@for (b of budgetsArray; track b.id) {
+<div class="budget-card">
+  <div class="budget-card-header">
+    <div class="budget-info">
+      <strong>{{ b.name }}</strong>
+      <span class="total-expenses"> €{{ totalExpenses(b) }} / </span>
+      <span class="budget-goal"> €{{ b.amount }} </span>
+    </div>
+
+    <div class="button-card">
+      <div class="budget-progress">
+        <div class="budget-progress-fill" [style.width.%]="percentageOfGoal(b)">
+          {{ percentageOfGoal(b) }}%
+        </div>
+      </div>
+      <button (click)="toggleShowExpenses(b.id)">
+        {{ showExpensesMap()[b.id] ? "Hide Expenses" : "View Expenses" }}
+      </button>
+    </div>
+  </div>
+
+  @if (showExpensesMap()[b.id]) {
+  <expense-list [expenses]="b.expenses" [budgetId]="b.id"></expense-list>
+  }
+</div>
+} @empty {
+<div class="no_listing">No budgets yet.</div>
+}
