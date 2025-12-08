@@ -2,7 +2,6 @@ import { Component, computed, signal } from '@angular/core';
 import { BudgetService } from '../budget';
 import { CommonModule } from '@angular/common';
 import { Budget } from '../budget.model';
-import { AddBudgetFormComponent } from '../add-budget-form/add-budget-form';
 import { ExpenseListComponent } from '../expense-list/expense-list';
 
 @Component({
@@ -26,13 +25,13 @@ export class BudgetListComponent {
   toggleShowExpenses(id: number) {
     this.showExpensesMap.update((map) => ({
       ...map,
-      [id]: !map[id], // toggle true/false
+      [id]: !map[id],
     }));
   }
 
   deleteBudget(budgetId: number) {
     this.budgetService.deleteBudget(budgetId);
-    // Optional: also remove from showExpensesMap to clean up
+
     this.showExpensesMap.update((map) => {
       const newMap = { ...map };
       delete newMap[budgetId];
