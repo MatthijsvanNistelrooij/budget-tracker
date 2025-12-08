@@ -1,8 +1,6 @@
 <div class="total-savings">
-  <strong
-    >Total savings:
-    {{ totalSavings() | currency : "EUR" : "symbol" : "1.2-2" }}
-  </strong>
+  Total savings:
+  {{ totalSavings() | currency : "EUR" : "symbol" : "1.2-2" }}
 </div>
 @for (b of budgetsArray; track b.id) {
 <div class="budget-card">
