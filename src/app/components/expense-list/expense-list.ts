@@ -30,6 +30,11 @@ export class ExpenseListComponent {
   deleteBudget() {
     const id = this.budgetId();
 
+    const confirmDelete = window.confirm(
+      'Are you sure you want to delete this budget?'
+    );
+    if (!confirmDelete) return;
+
     this.budgetService.deleteBudget(id);
 
     this.showExpensesMap.update((map) => {

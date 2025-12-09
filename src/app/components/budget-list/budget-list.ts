@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { BudgetService } from '../../core/services/budget.service';
 import { CommonModule } from '@angular/common';
 import { Budget } from '../../core/models/budget.model';
@@ -25,16 +25,6 @@ export class BudgetListComponent {
       ...map,
       [id]: !map[id],
     }));
-  }
-
-  deleteBudget(budgetId: number) {
-    this.budgetService.deleteBudget(budgetId);
-
-    this.showExpensesMap.update((map) => {
-      const newMap = { ...map };
-      delete newMap[budgetId];
-      return newMap;
-    });
   }
 
   totalExpenses(budget: Budget): number {
