@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { AddBudgetFormComponent } from './components/add-budget-form/add-budget-form';
 import { BudgetListComponent } from './components/budget-list/budget-list';
-
+import { AddBudgetFormComponent } from './components/add-budget-form/add-budget-form';
 @Component({
   selector: 'app-root',
   standalone: true,
