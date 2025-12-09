@@ -20,8 +20,6 @@ export class BudgetListComponent {
     return this.budgetService.budgets();
   }
 
-  
-
   toggleShowExpenses(id: number) {
     this.showExpensesMap.update((map) => ({
       ...map,
@@ -44,7 +42,7 @@ export class BudgetListComponent {
   }
 
   percentageOfGoal(budget: Budget): number {
-    if (budget.amount === 0) return 0; // voorkom deling door nul
+    if (budget.amount === 0) return 0;
     const total = budget.expenses.reduce((sum, e) => sum + e.amount, 0);
     return Math.min(100, Math.round((total / budget.amount) * 100));
   }

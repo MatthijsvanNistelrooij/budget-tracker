@@ -1,30 +1,32 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { BudgetService } from '../budget';
-
 @Component({
   selector: 'add-expense-form',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule],
   templateUrl: './add-expense-form.html',
   styleUrls: ['./add-expense-form.css'],
 })
 export class AddExpenseForm {
-  @Input() budgetId!: number;
+  budgetId = input.required<number>();
 
-  description = '';
-  amount: number | null = null;
+  description = signal('');
+  amount = signal<number | null>(null);
 
   constructor(private budgetService: BudgetService) {}
 
   submitExpense(event: Event) {
     event.preventDefault();
-    if (!this.description || !this.amount || this.amount <= 0) return;
 
-    this.budgetService.addExpense(this.budgetId, this.amount, this.description);
+    const desc = this.description().trim();
+    const amt = this.amount();
 
-    this.description = '';
-    this.amount = null;
+    if (!desc || !amt || amt <= 0) return;
+
+    this.budgetService.addExpense(this.budgetId(), amt, desc);
+
+    this.description.set('');
+    this.amount.set(null);
   }
 }

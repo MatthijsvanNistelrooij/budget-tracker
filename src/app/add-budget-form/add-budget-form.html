@@ -1,21 +1,21 @@
 <div class="card">
   <h3>Add Budget</h3>
 
-  <form (ngSubmit)="submit()">
+  <form (submit)="submit($event)">
     <div class="input-card">
       <input
         type="text"
-        [(ngModel)]="name"
-        name="name"
         placeholder="Name"
+        [value]="name()"
+        (input)="name.set($any($event.target).value)"
         required
       />
 
       <input
         type="number"
-        [(ngModel)]="amount"
-        name="amount"
         placeholder="Amount"
+        [value]="amount()"
+        (input)="amount.set(+$any($event.target).value)"
         required
       />
 

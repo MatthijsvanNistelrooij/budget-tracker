@@ -6,15 +6,16 @@
       <input
         type="text"
         placeholder="Description"
-        [(ngModel)]="description"
-        name="description"
+        [value]="description()"
+        (input)="description.set($any($event.target).value)"
         required
       />
+
       <input
         type="number"
         placeholder="Amount"
-        [(ngModel)]="amount"
-        name="amount"
+        [value]="amount()"
+        (input)="amount.set(+$any($event.target).value)"
         required
         min="0.01"
         step="0.01"
