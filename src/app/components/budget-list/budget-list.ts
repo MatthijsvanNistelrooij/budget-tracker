@@ -1,7 +1,7 @@
 import { Component, computed, signal } from '@angular/core';
-import { BudgetService } from '../budget';
+import { BudgetService } from '../../core/services/budget.service';
 import { CommonModule } from '@angular/common';
-import { Budget } from '../budget.model';
+import { Budget } from '../../core/models/budget.model';
 import { ExpenseListComponent } from '../expense-list/expense-list';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Injectable, signal, effect } from '@angular/core';
-import { Budget } from './budget.model';
+import { Budget } from '../models/budget.model';
 import { fromEvent } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -7,7 +7,6 @@ export class BudgetService {
   budgets = signal<Budget[]>(this.loadFromLocalStorage());
 
   constructor() {
-
     effect(() => {
       const value = this.budgets();
       localStorage.setItem('budgets', JSON.stringify(value));

@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BudgetService } from '../budget';
+import { BudgetService } from '../../core/services/budget.service';
 
 @Component({
   selector: 'add-budget-form',

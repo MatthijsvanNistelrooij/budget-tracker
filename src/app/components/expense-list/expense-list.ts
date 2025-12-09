@@ -1,8 +1,8 @@
 import { Component, input, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Expense } from '../budget.model';
-import { BudgetService } from '../budget';
-import { AddExpenseForm } from "../add-expense-form/add-expense-form";
+import { Expense } from '../../core/models/budget.model';
+import { BudgetService } from '../../core/services/budget.service';
+import { AddExpenseForm } from '../add-expense-form/add-expense-form';
 
 @Component({
   selector: 'expense-list',
@@ -32,7 +32,7 @@ export class ExpenseListComponent {
 
     this.budgetService.deleteBudget(id);
 
-    this.showExpensesMap.update(map => {
+    this.showExpensesMap.update((map) => {
       const newMap = { ...map };
       delete newMap[id];
       return newMap;
