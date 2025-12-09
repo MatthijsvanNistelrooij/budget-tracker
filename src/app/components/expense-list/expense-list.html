@@ -1,20 +1,17 @@
 <add-expense-form [budgetId]="budgetId()"></add-expense-form>
 
 <div class="expenses">
-
   @if (expenses().length === 0) {
-    <div class="no-expenses">No expenses yet.</div>
-  }
-
-  @for (e of expenses(); track e.id) {
-    <div class="expense-item">
-      <div class="description-item">
-        <span>{{ e.description }}</span>
-        <span>€{{ e.amount }}</span>
-      </div>
-
-      <button (click)="delete(e.id)">✕</button>
+  <div class="no-expenses">No expenses yet.</div>
+  } @for (e of expenses(); track e.id) {
+  <div class="expense-item">
+    <div class="description-item">
+      <span>{{ e.description }}</span>
+      <span>€{{ e.amount }}</span>
     </div>
+
+    <button (click)="delete(e.id)">✕</button>
+  </div>
   }
 
   <div class="total-expenses">
@@ -23,7 +20,7 @@
 
   <div class="delete-button">
     <button (click)="deleteBudget()" class="delete-budget">
-      DELETE BUDGET
+      <strong>DELETE BUDGET</strong>
     </button>
   </div>
 </div>
